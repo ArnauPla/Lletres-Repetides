@@ -1,0 +1,12 @@
+package Paquet;
+
+public class Main {
+
+	public static void main(String[] args) {
+		char[] nom ={ 'a', 'r', 'n', 'a', 'u' };
+		for(int i=0; i<nom.length; i++) {
+			System.out.println(nom[i]);
+		}
+	}
+
+}
