@@ -1,0 +1,88 @@
+package Paquet;
+
+import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
+package Paquet;
+
+import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		char[] vocals ={ 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' };
+		char[] numeros ={ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		
+		//Interruptors:
+		int y = 0;
+		int v = 0;
+		
+		List<Character> nom = new ArrayList<Character>();
+		
+		nom.add('a');
+		nom.add('r');
+		nom.add('n');
+		nom.add('a');
+		nom.add('u');
+		
+		List<Character> cognom = new ArrayList<Character>();
+		
+		cognom.add('p');
+		cognom.add('l');
+		cognom.add('a');
+		
+		//Fem una llista que englobi el nom i el cognom
+		List<Character> fullName = new ArrayList<Character>();
+		fullName.addAll(nom);
+		fullName.add(' ');
+		fullName.addAll(cognom);
+		System.out.println(fullName);
+		
+		
+		Map<Character, Integer> dataMap = new HashMap<Character, Integer>();
+		
+		//Fem un doble for per analitzar si hi ha algún número en la List:
+		for(char i : nom) {
+			for(char z: numeros) {
+				if(i == z) {
+					System.out.println("Els noms de persones no contenen números!");
+					v = 1;
+				}
+			}
+		}
+		
+		//Si no hi ha cap número, fem un doble for per veure quines són vocals i quines consonants:
+		if(v==0) {
+			for(char i : nom){
+				for(char x:vocals) {
+					if(i == x) {
+						System.out.println(i + " VOCAL");
+						y = 1;
+					}
+				}
+				if(y == 0) {
+					System.out.println(i + " CONSONANT");
+				}
+				y = 0;
+			}
+		}	
+		
+		//Guardem a la variable dataMap el nombre de vegades que es repeteix cada lletra.
+		int c = 0;
+		for(char i : nom) {
+			for(char j : nom) {
+				if(i==j) {
+					c++;
+				}
+			}
+			dataMap.put(i, c);
+			c = 0;
+		}
+		System.out.println(dataMap);
+
+	}
+}
