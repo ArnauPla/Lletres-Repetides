@@ -1,9 +1,7 @@
 package Paquet;
 
 import java.util.List;
-import java.util.Map;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Main {
 
@@ -15,8 +13,6 @@ public class Main {
 		checkNumbers(nom);
 		
 		checkVowels(nom);
-		
-		checkLetters(nom);
 
 	}
 	
@@ -47,31 +43,14 @@ public class Main {
 	}
 	
 	public static void checkVowels(List<Character> nom1) {
-		for(char i : nom1) {
-			i = Character.toLowerCase(i);
-			if(i == 'a' || i == 'e' || i == 'i' || i == 'o' || i == 'u' ) {
-				System.out.println(i + " VOCAL");
-			}else {
-				System.out.println(i + " CONSONANT");
+			for(char i : nom1) {
+				i = Character.toLowerCase(i);
+					if(i == 'a' || i == 'e' || i == 'i' || i == 'o' || i == 'u' ) {
+						System.out.println(i + " VOCAL");
+					}else {
+						System.out.println(i + " CONSONANT");
+					}
 			}
-		}
-	}
-	
-	public static void checkLetters(List<Character> nom1) {
-		Map<Character, Integer> dataMap = new HashMap<Character, Integer>();
-		int c = 0;
-		for(char i : nom1) {
-			i = Character.toLowerCase(i);
-			for(char j : nom1) {
-				j = Character.toLowerCase(j);
-				if(i==j) {
-					c++;
-				}
-			}
-			dataMap.put(i, c);
-			c = 0;
-		}
-		System.out.println(dataMap);
 	}
 }
 	
