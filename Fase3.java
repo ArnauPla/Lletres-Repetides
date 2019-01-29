@@ -32,7 +32,8 @@ public class Main {
 		Map<Character, Integer> dataMap = new HashMap<Character, Integer>();
 		for (char i : nom1) {
 			i = Character.toLowerCase(i);
-			dataMap.put(i, dataMap.getOrDefault(i, 0) + 1);
+			int count = dataMap.getOrDefault(i, 0) + 1;
+			dataMap.put(i, count);
 		}
 		System.out.println(dataMap);
 		
